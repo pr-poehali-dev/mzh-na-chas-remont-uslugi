@@ -86,11 +86,13 @@ const Index = () => {
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
           <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-red-500 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
         </div>
+        <div className="absolute top-5 right-10 neon-sign text-pink-500 text-xl md:text-3xl transform rotate-12 opacity-60">OPEN 24/7</div>
+        <div className="absolute bottom-10 left-5 neon-sign text-purple-400 text-2xl md:text-4xl transform -rotate-6 opacity-50">VIP</div>
         
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-center md:text-left animate-fade-in order-2 md:order-1">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg neon-text">
                 Муж на час
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-white/90">
@@ -99,7 +101,7 @@ const Index = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                 <Button 
                   size="lg" 
-                  className="bg-white text-orange-600 hover:bg-gray-100 text-lg px-8 py-6 shadow-xl hover-scale"
+                  className="bg-pink-600 text-white hover:bg-pink-700 text-lg px-8 py-6 shadow-xl hover-scale neon-border"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   <Icon name="Phone" className="mr-2" size={20} />
@@ -108,7 +110,7 @@ const Index = () => {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="bg-transparent border-2 border-white text-white hover:bg-white/20 text-lg px-8 py-6 hover-scale"
+                  className="bg-transparent border-2 border-pink-500 text-white hover:bg-pink-900/30 text-lg px-8 py-6 hover-scale neon-border"
                   onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   <Icon name="List" className="mr-2" size={20} />
@@ -129,10 +131,12 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-20 px-4 bg-gradient-to-b from-black to-purple-950">
-        <div className="container mx-auto max-w-6xl">
+      <section id="services" className="py-20 px-4 bg-gradient-to-b from-black to-purple-950 relative overflow-hidden">
+        <div className="absolute top-20 right-20 neon-sign text-purple-500 text-2xl opacity-40 hidden md:block">HOT</div>
+        <div className="absolute bottom-20 left-10 neon-sign text-pink-500 text-xl opacity-40 transform rotate-12 hidden md:block">NEW</div>
+        <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent neon-text">
               Наши услуги
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
@@ -170,10 +174,12 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-black">
-        <div className="container mx-auto max-w-6xl">
+      <section className="py-20 px-4 bg-black relative overflow-hidden">
+        <div className="absolute top-10 left-1/4 neon-sign text-red-500 text-3xl opacity-30 hidden md:block transform -rotate-12">★</div>
+        <div className="absolute bottom-10 right-1/3 neon-sign text-pink-500 text-4xl opacity-30 hidden md:block">♥</div>
+        <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent neon-text">
               Наши мастера
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
@@ -253,10 +259,11 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-20 px-4 bg-gradient-to-b from-purple-950 to-black">
-        <div className="container mx-auto max-w-4xl">
+      <section id="contact" className="py-20 px-4 bg-gradient-to-b from-purple-950 to-black relative overflow-hidden">
+        <div className="absolute top-10 right-10 neon-sign text-pink-600 text-2xl opacity-50 hidden md:block">CALL NOW</div>
+        <div className="container mx-auto max-w-4xl relative z-10">
           <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent neon-text">
               Контакты
             </h2>
             <p className="text-gray-300 text-lg">

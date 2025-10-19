@@ -1,12 +1,281 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/hooks/use-toast';
+import Icon from '@/components/ui/icon';
 
 const Index = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    message: ''
+  });
+
+  const services = [
+    {
+      icon: 'Wrench',
+      title: 'Мелкий ремонт',
+      description: 'Устранение протечек, замена смесителей, розеток и выключателей',
+      color: 'from-orange-500 to-red-500'
+    },
+    {
+      icon: 'Hammer',
+      title: 'Сборка мебели',
+      description: 'Профессиональная сборка любой мебели, полки, карнизы',
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      icon: 'Paintbrush',
+      title: 'Отделочные работы',
+      description: 'Поклейка обоев, покраска стен, укладка ламината',
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      icon: 'Lightbulb',
+      title: 'Электрика',
+      description: 'Замена проводки, установка светильников и люстр',
+      color: 'from-yellow-500 to-orange-500'
+    },
+    {
+      icon: 'Droplet',
+      title: 'Сантехника',
+      description: 'Установка и ремонт сантехники, прочистка труб',
+      color: 'from-cyan-500 to-blue-500'
+    },
+    {
+      icon: 'Sparkles',
+      title: 'Массаж',
+      description: 'Расслабляющий и оздоровительный массаж на дому',
+      color: 'from-green-500 to-emerald-500'
+    }
+  ];
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.phone) {
+      toast({
+        title: 'Ошибка',
+        description: 'Пожалуйста, заполните имя и телефон',
+        variant: 'destructive'
+      });
+      return;
+    }
+    
+    toast({
+      title: 'Заявка отправлена!',
+      description: 'Мы свяжемся с вами в ближайшее время',
+    });
+    
+    setFormData({ name: '', phone: '', message: '' });
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
+      <section className="relative overflow-hidden bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 text-white py-20 px-4">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-300 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center animate-fade-in">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">
+              Муж на час
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">
+              Профессиональные услуги по дому и не только
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="bg-white text-orange-600 hover:bg-gray-100 text-lg px-8 py-6 shadow-xl hover-scale"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <Icon name="Phone" className="mr-2" size={20} />
+                Вызвать мастера
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="bg-transparent border-2 border-white text-white hover:bg-white/20 text-lg px-8 py-6 hover-scale"
+                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <Icon name="List" className="mr-2" size={20} />
+                Наши услуги
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+              Наши услуги
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Решим любую бытовую проблему быстро и качественно
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <Card 
+                key={index} 
+                className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-orange-300 hover:-translate-y-2 bg-white/80 backdrop-blur"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <CardHeader>
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} p-4 mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <Icon name={service.icon as any} className="text-white" size={32} />
+                  </div>
+                  <CardTitle className="text-2xl">{service.title}</CardTitle>
+                  <CardDescription className="text-base">
+                    {service.description}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">
+            Почему выбирают нас?
+          </h3>
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            <div className="animate-fade-in">
+              <div className="text-5xl mb-4">⚡</div>
+              <h4 className="text-xl font-semibold mb-2">Быстро</h4>
+              <p className="text-white/90">Приедем в течение 2 часов</p>
+            </div>
+            <div className="animate-fade-in" style={{ animationDelay: '100ms' }}>
+              <div className="text-5xl mb-4">✅</div>
+              <h4 className="text-xl font-semibold mb-2">Качественно</h4>
+              <p className="text-white/90">Гарантия на все работы</p>
+            </div>
+            <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
+              <div className="text-5xl mb-4">💰</div>
+              <h4 className="text-xl font-semibold mb-2">Недорого</h4>
+              <p className="text-white/90">Честные цены без скрытых платежей</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-20 px-4">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+              Контакты
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Оставьте заявку и мы свяжемся с вами в течение 15 минут
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="bg-gradient-to-br from-orange-500 to-red-500 text-white border-0 shadow-2xl">
+              <CardHeader>
+                <CardTitle className="text-2xl">Свяжитесь с нами</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Phone" size={24} />
+                  </div>
+                  <div>
+                    <p className="font-semibold mb-1">Телефон</p>
+                    <a href="tel:+79991234567" className="text-lg hover:underline">
+                      +7 (999) 123-45-67
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Mail" size={24} />
+                  </div>
+                  <div>
+                    <p className="font-semibold mb-1">Email</p>
+                    <a href="mailto:info@muzhnachas.ru" className="text-lg hover:underline">
+                      info@muzhnachas.ru
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Clock" size={24} />
+                  </div>
+                  <div>
+                    <p className="font-semibold mb-1">Режим работы</p>
+                    <p className="text-lg">Ежедневно с 8:00 до 22:00</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-2xl border-2">
+              <CardHeader>
+                <CardTitle className="text-2xl">Оставить заявку</CardTitle>
+                <CardDescription>Заполните форму и мы перезвоним</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <Input 
+                      placeholder="Ваше имя" 
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="border-2 focus:border-orange-500"
+                    />
+                  </div>
+                  <div>
+                    <Input 
+                      placeholder="Телефон" 
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="border-2 focus:border-orange-500"
+                    />
+                  </div>
+                  <div>
+                    <Textarea 
+                      placeholder="Опишите вашу задачу" 
+                      rows={4}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="border-2 focus:border-orange-500"
+                    />
+                  </div>
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-lg py-6 shadow-lg hover-scale"
+                  >
+                    <Icon name="Send" className="mr-2" size={20} />
+                    Отправить заявку
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-gray-900 text-white py-8 px-4">
+        <div className="container mx-auto max-w-6xl text-center">
+          <p className="text-gray-400">
+            © 2025 Муж на час. Все права защищены.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };

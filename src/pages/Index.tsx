@@ -87,42 +87,31 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-center md:text-left animate-fade-in">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">
-                Муж на час
-              </h1>
-              <p className="text-xl md:text-2xl mb-8 text-white/90">
-                Профессиональные услуги по дому и не только
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <Button 
-                  size="lg" 
-                  className="bg-white text-orange-600 hover:bg-gray-100 text-lg px-8 py-6 shadow-xl hover-scale"
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  <Icon name="Phone" className="mr-2" size={20} />
-                  Вызвать мастера
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="bg-transparent border-2 border-white text-white hover:bg-white/20 text-lg px-8 py-6 hover-scale"
-                  onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  <Icon name="List" className="mr-2" size={20} />
-                  Наши услуги
-                </Button>
-              </div>
-            </div>
-            
-            <div className="relative animate-fade-in hidden md:block">
-              <div className="absolute -inset-4 bg-white/20 rounded-3xl blur-2xl"></div>
-              <img 
-                src="https://cdn.poehali.dev/projects/43d1f06e-85b6-4a82-b62a-424de89e658c/files/5a8c6b02-0174-4b9d-9287-81a2778db1f4.jpg"
-                alt="Профессиональный мастер"
-                className="relative rounded-3xl shadow-2xl w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500"
-              />
+          <div className="text-center animate-fade-in">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">
+              Муж на час
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto">
+              Профессиональные услуги по дому и не только
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="bg-white text-orange-600 hover:bg-gray-100 text-lg px-8 py-6 shadow-xl hover-scale"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <Icon name="Phone" className="mr-2" size={20} />
+                Вызвать мастера
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="bg-transparent border-2 border-white text-white hover:bg-white/20 text-lg px-8 py-6 hover-scale"
+                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                <Icon name="List" className="mr-2" size={20} />
+                Наши услуги
+              </Button>
             </div>
           </div>
         </div>

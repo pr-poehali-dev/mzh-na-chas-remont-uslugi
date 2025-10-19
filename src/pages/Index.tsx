@@ -79,11 +79,12 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
-      <section className="relative overflow-hidden bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 text-white py-20 px-4">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-300 rounded-full blur-3xl"></div>
+    <div className="min-h-screen bg-gradient-to-br from-purple-950 via-black to-purple-900">
+      <section className="relative overflow-hidden bg-gradient-to-r from-purple-900 via-pink-900 to-red-900 text-white py-20 px-4">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-pink-500 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-red-500 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
         </div>
         
         <div className="container mx-auto max-w-6xl relative z-10">
@@ -128,13 +129,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-20 px-4">
+      <section id="services" className="py-20 px-4 bg-gradient-to-b from-black to-purple-950">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
               Наши услуги
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
               Решим любую бытовую проблему быстро и качественно
             </p>
           </div>
@@ -169,13 +170,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 bg-black">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
               Наши мастера
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
               Профессионалы своего дела с большим опытом
             </p>
           </div>
@@ -223,7 +224,11 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white">
+      <section className="py-16 px-4 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-0 left-1/4 w-64 h-64 bg-pink-400 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-purple-400 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1.5s'}}></div>
+        </div>
         <div className="container mx-auto max-w-4xl text-center">
           <h3 className="text-3xl md:text-4xl font-bold mb-4">
             Почему выбирают нас?
@@ -248,19 +253,19 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-20 px-4">
+      <section id="contact" className="py-20 px-4 bg-gradient-to-b from-purple-950 to-black">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
               Контакты
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-300 text-lg">
               Оставьте заявку и мы свяжемся с вами в течение 15 минут
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-gradient-to-br from-orange-500 to-red-500 text-white border-0 shadow-2xl">
+            <Card className="bg-gradient-to-br from-purple-600 to-pink-600 text-white border-0 shadow-2xl">
               <CardHeader>
                 <CardTitle className="text-2xl">Свяжитесь с нами</CardTitle>
               </CardHeader>
@@ -336,7 +341,7 @@ const Index = () => {
                   </div>
                   <Button 
                     type="submit" 
-                    className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-lg py-6 shadow-lg hover-scale"
+                    className="w-full bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-lg py-6 shadow-lg hover-scale"
                   >
                     <Icon name="Send" className="mr-2" size={20} />
                     Отправить заявку

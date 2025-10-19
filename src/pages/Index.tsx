@@ -144,6 +144,60 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+              Наши мастера
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Профессионалы своего дела с большим опытом
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2">
+              <img 
+                src="https://cdn.poehali.dev/projects/43d1f06e-85b6-4a82-b62a-424de89e658c/files/574ccacd-1f90-4715-a669-0aeb5d468f25.jpg" 
+                alt="Мастер" 
+                className="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 className="text-2xl font-bold mb-2">Профессиональный подход</h3>
+                <p className="text-white/90">Опыт работы более 10 лет</p>
+              </div>
+            </div>
+            
+            <div className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2">
+              <img 
+                src="https://cdn.poehali.dev/projects/43d1f06e-85b6-4a82-b62a-424de89e658c/files/d44375f7-acbc-4774-be4e-e8bfca7e55f5.jpg" 
+                alt="Мастер" 
+                className="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 className="text-2xl font-bold mb-2">Качественные инструменты</h3>
+                <p className="text-white/90">Современное оборудование</p>
+              </div>
+            </div>
+            
+            <div className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2">
+              <img 
+                src="https://cdn.poehali.dev/projects/43d1f06e-85b6-4a82-b62a-424de89e658c/files/ab3c8451-7837-4b89-bb03-ac204bd291e4.jpg" 
+                alt="Мастер" 
+                className="w-full h-96 object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 className="text-2xl font-bold mb-2">Внимание к деталям</h3>
+                <p className="text-white/90">Гарантия на все работы</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 px-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <h3 className="text-3xl md:text-4xl font-bold mb-4">

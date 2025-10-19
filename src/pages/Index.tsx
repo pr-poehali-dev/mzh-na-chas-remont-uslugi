@@ -55,7 +55,7 @@ const Index = () => {
       title: 'Массаж',
       description: 'Расслабляющий и оздоровительный массаж на дому',
       color: 'from-green-500 to-emerald-500',
-      image: 'https://cdn.poehali.dev/projects/43d1f06e-85b6-4a82-b62a-424de89e658c/files/feccc6e5-6777-45f3-8583-efec17b962cb.jpg'
+      image: 'https://cdn.poehali.dev/projects/43d1f06e-85b6-4a82-b62a-424de89e658c/files/8521b0e8-f912-4fef-8e29-edb5af8ac72a.jpg'
     }
   ];
 

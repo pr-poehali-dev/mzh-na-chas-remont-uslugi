@@ -19,37 +19,43 @@ const Index = () => {
       icon: 'Wrench',
       title: 'Мелкий ремонт',
       description: 'Устранение протечек, замена смесителей, розеток и выключателей',
-      color: 'from-orange-500 to-red-500'
+      color: 'from-orange-500 to-red-500',
+      image: 'https://cdn.poehali.dev/projects/43d1f06e-85b6-4a82-b62a-424de89e658c/files/9d210647-21bf-430e-84d5-72f207e25f2f.jpg'
     },
     {
       icon: 'Hammer',
       title: 'Сборка мебели',
       description: 'Профессиональная сборка любой мебели, полки, карнизы',
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-blue-500 to-cyan-500',
+      image: 'https://cdn.poehali.dev/projects/43d1f06e-85b6-4a82-b62a-424de89e658c/files/657d11fa-40fb-4dcd-adda-3571d1ea8dd9.jpg'
     },
     {
       icon: 'Paintbrush',
       title: 'Отделочные работы',
       description: 'Поклейка обоев, покраска стен, укладка ламината',
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-purple-500 to-pink-500',
+      image: 'https://cdn.poehali.dev/projects/43d1f06e-85b6-4a82-b62a-424de89e658c/files/6f9ff3f0-9ce1-42ef-8a3a-f46da4457d88.jpg'
     },
     {
       icon: 'Lightbulb',
       title: 'Электрика',
       description: 'Замена проводки, установка светильников и люстр',
-      color: 'from-yellow-500 to-orange-500'
+      color: 'from-yellow-500 to-orange-500',
+      image: 'https://cdn.poehali.dev/projects/43d1f06e-85b6-4a82-b62a-424de89e658c/files/eabce156-0929-4c00-ac73-ea2644031fb5.jpg'
     },
     {
       icon: 'Droplet',
       title: 'Сантехника',
       description: 'Установка и ремонт сантехники, прочистка труб',
-      color: 'from-cyan-500 to-blue-500'
+      color: 'from-cyan-500 to-blue-500',
+      image: 'https://cdn.poehali.dev/projects/43d1f06e-85b6-4a82-b62a-424de89e658c/files/e336eaa2-db21-468b-9912-431111fa0d60.jpg'
     },
     {
       icon: 'Sparkles',
       title: 'Массаж',
       description: 'Расслабляющий и оздоровительный массаж на дому',
-      color: 'from-green-500 to-emerald-500'
+      color: 'from-green-500 to-emerald-500',
+      image: 'https://cdn.poehali.dev/projects/43d1f06e-85b6-4a82-b62a-424de89e658c/files/feccc6e5-6777-45f3-8583-efec17b962cb.jpg'
     }
   ];
 
@@ -137,13 +143,21 @@ const Index = () => {
             {services.map((service, index) => (
               <Card 
                 key={index} 
-                className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-orange-300 hover:-translate-y-2 bg-white/80 backdrop-blur"
+                className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-orange-300 hover:-translate-y-2 bg-white overflow-hidden"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <CardHeader>
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} p-4 mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <Icon name={service.icon as any} className="text-white" size={32} />
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className={`absolute top-4 right-4 w-14 h-14 rounded-xl bg-gradient-to-br ${service.color} p-3 shadow-xl`}>
+                    <Icon name={service.icon as any} className="text-white" size={28} />
                   </div>
+                </div>
+                <CardHeader>
                   <CardTitle className="text-2xl">{service.title}</CardTitle>
                   <CardDescription className="text-base">
                     {service.description}

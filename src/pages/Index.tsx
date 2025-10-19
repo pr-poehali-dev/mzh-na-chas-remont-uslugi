@@ -119,7 +119,7 @@ const Index = () => {
             <div className="relative animate-fade-in order-1 md:order-2">
               <div className="absolute -inset-4 bg-white/20 rounded-3xl blur-3xl"></div>
               <img 
-                src="https://cdn.poehali.dev/projects/43d1f06e-85b6-4a82-b62a-424de89e658c/files/ec62279d-12ee-4b1e-a5c6-1d56e87014f9.jpg"
+                src="https://cdn.poehali.dev/projects/43d1f06e-85b6-4a82-b62a-424de89e658c/files/cf136ad4-4d55-4580-85f4-1693d0987e27.jpg"
                 alt="Профессиональный мастер"
                 className="relative rounded-3xl shadow-2xl w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500"
               />
